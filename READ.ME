@@ -1,0 +1,4 @@
+如果用的是MAC电脑，安装的docker的话，用下面命令暴露tcp端口
+
+安装：brew install socat
+使用：socat TCP-LISTEN:2375,reuseaddr,fork UNIX-CONNECT:/var/run/docker.sock
