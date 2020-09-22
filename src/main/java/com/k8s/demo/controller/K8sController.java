@@ -4,10 +4,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.net.InetAddress;
-import java.net.InterfaceAddress;
-import java.net.NetworkInterface;
-import java.net.SocketException;
+import java.net.*;
 import java.util.List;
 
 @RestController
@@ -18,6 +15,27 @@ public class K8sController {
     @GetMapping("/mac")
     public String getIps() throws Exception {
         return getMAC();
+    }
+
+
+    @GetMapping("/host")
+    public String gerVersion() throws Exception {
+        InetAddress ia = InetAddress.getLocalHost();
+        String host = ia.getHostName();//获取计算机主机名
+        return host;
+    }
+
+    @GetMapping("/balance")
+    public String getBalance() throws Exception {
+        System.out.println("-------------------------------");
+        return "success";
+    }
+
+
+    public static void main(String[] args) throws UnknownHostException {
+        InetAddress ia = InetAddress.getLocalHost();
+        String host = ia.getHostName();//获取计算机主机名
+        System.out.println(host);
     }
 
     public static String getMAC() throws SocketException {

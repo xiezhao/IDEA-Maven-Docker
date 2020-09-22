@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <docker.image.prefix>rick</docker.image.prefix>
+        <docker.image.prefix>rick01</docker.image.prefix>
     </properties>
 
     <dependencies>
@@ -68,11 +68,10 @@
                     <imageTags>
                         <imageTag>latest</imageTag>
                     </imageTags>
-                    <!-- 指定 Dockerfile 路径-->
-                    <dockerDirectory>${project.build.directory}/docker</dockerDirectory>
+                    <!-- 指定 Dockerfile 路径，放到哪儿就指定到哪儿-->
+                    <dockerDirectory>${project.basedir}</dockerDirectory>
                     <!--指定远程 docker api地址-->
                     <dockerHost>http://localhost:2375</dockerHost>
-                    <!-- 这里是复制 jar 包到 docker 容器指定目录配置 -->
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
