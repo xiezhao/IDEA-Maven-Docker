@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.k8s</groupId>
     <artifactId>demo</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <name>demo</name>
     <description>Demo project for Spring Boot</description>
 
@@ -66,7 +66,8 @@
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                     <!--指定标签-->
                     <imageTags>
-                        <imageTag>latest</imageTag>
+                       <!-- <imageTag>latest</imageTag>-->
+                        <imageTag>${project.version}</imageTag>
                     </imageTags>
                     <!-- 指定 Dockerfile 路径，放到哪儿就指定到哪儿-->
                     <dockerDirectory>${project.basedir}</dockerDirectory>
