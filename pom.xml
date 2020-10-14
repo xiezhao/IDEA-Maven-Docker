@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.k8s</groupId>
     <artifactId>demo</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.1</version>
     <name>demo</name>
     <description>Demo project for Spring Boot</description>
 
@@ -71,8 +71,10 @@
                     </imageTags>
                     <!-- 指定 Dockerfile 路径，放到哪儿就指定到哪儿-->
                     <dockerDirectory>${project.basedir}</dockerDirectory>
-                    <!--指定远程 docker api地址-->
-                    <dockerHost>http://localhost:2375</dockerHost>
+
+<!--                    &lt;!&ndash;指定远程 docker api地址&ndash;&gt;-->
+<!--                    <dockerHost>http://localhost:2375</dockerHost>-->
+
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
